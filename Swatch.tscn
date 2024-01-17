@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://dekef6s57mtyb"]
 
-[ext_resource type="Script" path="res://slot.gd" id="1_kqvgt"]
+[ext_resource type="Script" path="res://Swatch.gd" id="1_wpxos"]
 
-[node name="Slot" type="ColorRect"]
+[node name="Swatch" type="ColorRect"]
 custom_minimum_size = Vector2(209, 209)
 color = Color(0.490196, 0.490196, 0.490196, 1)
-script = ExtResource("1_kqvgt")
+script = ExtResource("1_wpxos")
 
 [node name="Filter" type="ColorRect" parent="."]
 layout_mode = 1

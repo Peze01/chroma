@@ -1,7 +1,5 @@
 extends ColorRect
 
-var slot_ID := -1
-var colour_data = Color(1.0,1.0,1.0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
