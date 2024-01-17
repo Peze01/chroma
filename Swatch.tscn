@@ -7,11 +7,4 @@ custom_minimum_size = Vector2(116, 116)
 color = Color(0.490196, 0.490196, 0.490196, 1)
 script = ExtResource("1_wpxos")
 
-[node name="Filter" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
+[connection signal="gui_input" from="." to="." method="_on_swatch_gui_input"]
