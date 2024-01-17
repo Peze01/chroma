@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhkq7iodctydd"]
+
+[ext_resource type="Script" path="res://gui.gd" id="1_mx5nw"]
+[ext_resource type="PackedScene" uid="uid://dekef6s57mtyb" path="res://slot.tscn" id="2_1n21a"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mx5nw")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[node name="Grid" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.276
+anchor_top = 0.5
+anchor_right = 0.276
+anchor_bottom = 0.5
+offset_left = -313.28
+offset_top = -324.0
+offset_right = 313.72
+offset_bottom = 303.0
+
+[node name="PaletteGrid" type="GridContainer" parent="Grid"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.5
+offset_top = -313.5
+offset_right = 313.5
+offset_bottom = 313.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Slot" parent="Grid/PaletteGrid" instance=ExtResource("2_1n21a")]
+layout_mode = 2
+
+[node name="Result" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 868.0
+offset_top = 187.0
+offset_right = 1163.0
+offset_bottom = 482.0
+metadata/_edit_use_anchors_ = true
