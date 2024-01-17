@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhkq7iodctydd"]
+[gd_scene load_steps=4 format=3 uid="uid://dhkq7iodctydd"]
 
 [ext_resource type="Script" path="res://gui.gd" id="1_mx5nw"]
+[ext_resource type="Texture2D" uid="uid://da88xd25jwx6r" path="res://assets/background.png" id="2_8grte"]
 [ext_resource type="Script" path="res://Result.gd" id="2_w2gcv"]
 
 [node name="GUI" type="Control"]
@@ -12,36 +13,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mx5nw")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_right = -1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -400.0
+offset_right = 225.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.141176, 0.141176, 0.141176, 1)
-
-[node name="TextEdit" type="TextEdit" parent="Background"]
-layout_mode = 0
-offset_left = 713.0
-offset_top = 363.0
-offset_right = 788.0
-offset_bottom = 405.0
-text = "Score:"
+texture = ExtResource("2_8grte")
 
 [node name="Palette" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.276
-anchor_top = 0.5
-anchor_right = 0.276
-anchor_bottom = 0.5
-offset_left = -313.28
-offset_top = -324.0
-offset_right = 313.72
-offset_bottom = 303.0
+anchor_left = 0.5
+anchor_top = 0.719
+anchor_right = 0.5
+anchor_bottom = 0.719
+offset_left = -175.0
+offset_top = -175.2
+offset_right = 173.0
+offset_bottom = 172.8
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PaletteGrid" type="GridContainer" parent="Palette"]
 layout_mode = 1
@@ -50,10 +49,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -313.5
-offset_top = -313.5
-offset_right = 313.5
-offset_bottom = 313.5
+offset_left = -174.0
+offset_top = -174.0
+offset_right = 174.0
+offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 0
@@ -63,13 +62,15 @@ columns = 3
 [node name="Result" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.672156
-anchor_top = 0.251889
-anchor_right = 0.672156
-anchor_bottom = 0.251889
-offset_left = -147.36
-offset_top = -147.36
-offset_right = 147.64
-offset_bottom = 147.64
+anchor_left = 0.495556
+anchor_top = 0.42625
+anchor_right = 0.495556
+anchor_bottom = 0.42625
+offset_left = -58.0
+offset_top = -91.0
+offset_right = 58.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_w2gcv")
 metadata/_edit_use_anchors_ = true

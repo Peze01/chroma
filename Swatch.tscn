@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Swatch.gd" id="1_wpxos"]
 
 [node name="Swatch" type="ColorRect"]
-custom_minimum_size = Vector2(209, 209)
+custom_minimum_size = Vector2(116, 116)
 color = Color(0.490196, 0.490196, 0.490196, 1)
 script = ExtResource("1_wpxos")
 
