@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3l260guuvi1c"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_2aj2x"]
+[ext_resource type="Shader" uid="uid://civxc3hx2gh55" path="res://rainbow animation.tres" id="1_3xprl"]
+[ext_resource type="Texture2D" uid="uid://b8doa78klmob1" path="res://assets/rainbow_texture.png" id="2_sdfpe"]
+[ext_resource type="Texture2D" uid="uid://dwcnrld1h6m2u" path="res://assets/logo_white.png" id="3_h5yel"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mu1nn"]
+shader = ExtResource("1_3xprl")
+shader_parameter/Noise_Scroll = Vector2(0.2, 0)
+shader_parameter/Noise_Texture = ExtResource("2_sdfpe")
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2aj2x")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_mu1nn")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -41.5
+offset_right = 191.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_h5yel")

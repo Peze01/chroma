@@ -41,6 +41,10 @@ func new_palette():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#get_node("Logo Animation").play("Logo Appear")
+	start_game()
+
+func start_game():
 	if selected_difficulty == 0:
 		PALETTE_SIZE = 4
 		SWATCH_SIZE = 174
@@ -56,7 +60,6 @@ func _ready():
 	new_palette()
 	create_palette()
 	create_result()
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -124,3 +127,8 @@ func create_result():
 	print(correct_swatches)
 	print(colour_array[correct_swatches[0]], colour_array[correct_swatches[1]])
 	
+
+
+func _on_logo_animation_animation_finished(anim_name):
+	if anim_name == "Logo Appear":
+		start_game()

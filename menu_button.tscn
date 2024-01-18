@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://4kb34t16erlh"]
+
+[ext_resource type="Shader" uid="uid://d0dlfht6bapck" path="res://menu_button.tres" id="1_e5mu0"]
+[ext_resource type="Texture2D" uid="uid://bsh7jedl31qi5" path="res://assets/empty button.png" id="1_yk2rm"]
+[ext_resource type="Texture2D" uid="uid://bul1chqf2qwom" path="res://assets/empty button hover.png" id="2_c481o"]
+[ext_resource type="Texture2D" uid="uid://c10lh7finuykm" path="res://assets/rainbow_texture_horizontal.png" id="2_iqhoe"]
+[ext_resource type="Script" path="res://menu_button.gd" id="5_vqadg"]
+[ext_resource type="Texture2D" uid="uid://bs8nanv60gc7i" path="res://assets/empty button overlay.png" id="6_pw7mp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfhn2"]
+shader = ExtResource("1_e5mu0")
+shader_parameter/Noise_Scroll = Vector2(0, 0.1)
+shader_parameter/Lightness2 = null
+shader_parameter/Main_Texture = ExtResource("1_yk2rm")
+shader_parameter/Noise_Texture = ExtResource("2_iqhoe")
+
+[node name="Menu Button" type="TextureButton"]
+material = SubResource("ShaderMaterial_wfhn2")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("1_yk2rm")
+texture_hover = ExtResource("2_c481o")
+script = ExtResource("5_vqadg")
+
+[node name="ButtonLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="Overlay" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_pw7mp")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
