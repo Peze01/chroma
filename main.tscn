@@ -12,7 +12,7 @@ shader_parameter/Noise_Texture = ExtResource("2_sdfpe")
 
 [sub_resource type="Animation" id="Animation_2n4dp"]
 resource_name = "Logo Appear"
-length = 4.25
+length = 4.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -97,18 +97,30 @@ _data = {
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -400.0
+offset_right = 225.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2aj2x")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -400.0
+offset_right = 225.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)

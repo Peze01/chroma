@@ -3,6 +3,8 @@ extends Control
 @onready var swatch_scene = preload("res://Swatch.tscn")
 @onready var palette_grid = $Palette/PaletteGrid
 @onready var score_node = $Score
+@onready var normal_button = $Normal
+@onready var hard_button = $Hard
 @onready var highscore_node = $HighScore
 
 const COLOURS_TO_MIX = 2
@@ -41,10 +43,25 @@ func new_palette():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#get_node("Logo Animation").play("Logo Appear")
+	normal_button.normal_selected.connect(_on_normal_pressed)
+	hard_button.hard_selected.connect(_on_hard_pressed)
+	pass
+
+func _on_normal_pressed():
+	selected_difficulty = 0
 	start_game()
+func _on_hard_pressed():
+	selected_difficulty = 1
+	start_game
+
 
 func start_game():
+	normal_button.visible = false
+	hard_button.visible = false
+	$ScoreLabel.visible = true
+	$Score.visible = true
+	$HighScoreLabel.visible = true
+	$HighScore.visible = true
 	if selected_difficulty == 0:
 		PALETTE_SIZE = 4
 		SWATCH_SIZE = 174
@@ -128,7 +145,3 @@ func create_result():
 	print(colour_array[correct_swatches[0]], colour_array[correct_swatches[1]])
 	
 
-
-func _on_logo_animation_animation_finished(anim_name):
-	if anim_name == "Logo Appear":
-		start_game()
