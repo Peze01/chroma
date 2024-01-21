@@ -52,7 +52,7 @@ func _on_normal_pressed():
 	start_game()
 func _on_hard_pressed():
 	selected_difficulty = 1
-	start_game
+	start_game()
 
 
 func start_game():
